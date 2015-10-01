@@ -82,44 +82,51 @@ bool f_perfect(int x)
 int f_rotate(int n, int r)
 {
 
-    int val = 0, cnt=0, temp=0, ph=0;
+    int val = 0, digits=0, temp=0, ph=0, sub=0;
+
+    int reversal[4] = {0};
 
     val = n; //set value to entered number so n does not change
     while (val != 0)//while loop to get the number of digits in the number
     {
         val = val/10; //dividing an int by 10 removes the decimal place
-        cnt++; //counting digits until val reaches 0
+        digits++; //counting digits until val reaches 0
     }
 
-
-    int *arr = (int *)malloc(cnt*sizeof(int));
-    int reversal[4] = {0};
-    int i = cnt;
-    val = n;
-    int sub =0;
-    while (i != 0)
+    int i = digits;  //have i be the value of the number of digits without changing the original value.
+    val = n; //use val as a placeholder so n does not change
+    while (i != 0) //swhile loop
     {
-        sub = val % 10;
-        reversal [--i] = sub;
+        sub = val % 10; //use sub so val does not change
+        reversal [--i] = sub; //puts each digit into the first array
         val = val / 10;
     }
 
-    i = cnt-1;
-    int holder [4] ={0};
-    for (; i>=0; i--)
+    i = digits-1; //for use with language digits(0-3), not real number digits(1-4)
+    int holder [4] ={0}; //new holding array
+    for (; i>=0; i--) //for loop
     {
-        if ((r+i) >= cnt)
+        if ((r+i) >= digits) //if the number of places to be switched + the place in the array >= the number of digits,
         {
-            int temp = (r+i-cnt);
-            holder[temp] = reversal[i];
+            int temp = (r+i-digits); //adding them and subtracting the digits amounts to the correct spot to be rotated in the new array
+            holder[temp] = reversal[i]; //place the value of the original number n, into the holding array rotated by temp number of places.
         }
         else
         {
-            holder[i+r] = reversal[i];
+            holder[i+r] = reversal[i]; //otherwise the rotation is simple, the values are rotated by r number of places.
         }
     }
-    //from here how can i make the array 1 int?
-  return n; //  these are stubs.. of course!
+    int final_num=0; //holds the rotated int
+    int x = 0; //cannot place this in the for loop in C?
+    int eths = digits-1; //enths will hold the place of
+    for (; x <= (digits-1); x++) //for loop rotates through holder array
+    {
+        final_num = final_num + (holder[x] * (pow(10, (eths)))); //takes each value of the array, and multiplies it by 10^ eths to get 4000, 400, 40, 4, etch
+        eths--; //decrements after each iteration to add the thousands, hundreths, tenths, and ones columns of the number.
+    }
+    n=final_num;
+
+  return n; //returns rotated number
 }
 /*
 //5
