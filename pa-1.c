@@ -1,6 +1,6 @@
 // add includes
 #include "pa-1.h"
-
+//#include <stdlib.h>
 
 bool f_armstrong(int n)
 {
@@ -90,6 +90,9 @@ int f_rotate(int n, int r)
         val = val/10; //dividing an int by 10 removes the decimal place
         cnt++; //counting digits until val reaches 0
     }
+
+
+    int *arr = (int *)malloc(cnt*sizeof(int));
     int reversal[4] = {0};
     int i = cnt;
     val = n;
@@ -115,7 +118,7 @@ int f_rotate(int n, int r)
             holder[i+r] = reversal[i];
         }
     }
-
+    //from here how can i make the array 1 int?
   return n; //  these are stubs.. of course!
 }
 /*

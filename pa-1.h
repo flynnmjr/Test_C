@@ -11,7 +11,7 @@ bool f_brackets(char *e);
 bool f_perfect(int x);
 
 //4
-int f_rotate(int n, int r)
+int f_rotate(int n, int r);
 /*
 //5
 int f_str_search(char *pattern, char *text);
