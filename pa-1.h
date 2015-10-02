@@ -12,10 +12,10 @@ bool f_perfect(int x);
 
 //4
 int f_rotate(int n, int r);
-/*
+
 //5
 int f_str_search(char *pattern, char *text);
-
+/*
 //6
 int f_collatz_count(int n);  // c doesn't have natural numbers, using int
 

@@ -82,7 +82,7 @@ bool f_perfect(int x)
 int f_rotate(int n, int r)
 {
 
-    int val = 0, digits=0, temp=0, ph=0, sub=0;
+    int val = 0, digits=0,sub=0;
 
     int reversal[4] = {0};
 
@@ -121,17 +121,45 @@ int f_rotate(int n, int r)
     int eths = digits-1; //enths will hold the place of
     for (; x <= (digits-1); x++) //for loop rotates through holder array
     {
-        final_num = final_num + (holder[x] * (pow(10, (eths)))); //takes each value of the array, and multiplies it by 10^ eths to get 4000, 400, 40, 4, etch
+        final_num = final_num + (holder[x] * (pow(10, (eths)))); //takes each value of the array, and multiplies it by 10^ eths to get 4000, 400, 40, 4, etc.
         eths--; //decrements after each iteration to add the thousands, hundreths, tenths, and ones columns of the number.
     }
     n=final_num;
 
   return n; //returns rotated number
 }
-/*
-//5
-//int f_str_search(char *pattern, char *text);
 
+int f_str_search(char *pattern, char *text)
+{
+    int occurrences=0, length_pattern=0, length_text=0, x=0, i=0, counter=0;
+    length_pattern = strlen(pattern);
+    length_text = strlen(text);
+
+    for (; i <= length_text; i++)
+    {
+
+        for(x=0; x < length_pattern; x++)
+        {
+
+            if (pattern[x] == text[i])
+            {
+                counter++;
+                break;
+            }
+            if (counter == length_pattern)
+            {
+                occurrences++;
+                counter = 0;
+            }
+
+
+
+        }
+    }
+
+    return occurrences;
+}
+/*
 //6
 //int f_collatz_count(int n);
 

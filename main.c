@@ -1,5 +1,6 @@
 #include "pa-1.h"
 #include <stdio.h>
+#include <string.h>
 
 void text_output(int question_number, bool answer);
 
@@ -17,6 +18,10 @@ int main(int argc, char** argv)
   int r = 1;
   int rotate_test_solution = 4123;
   int rotate_test_ans = 0;
+  char pattern_test[] = "poop";
+  char text_test[] = "when i pooped it was poopy like poop";
+  int str_search_solution = 3;
+  int str_search_ans =0;
 
 
   printf("Testing functions:\n");
@@ -41,6 +46,19 @@ int main(int argc, char** argv)
       ans = false;
   }
   text_output(4,ans);
+
+  str_search_ans = f_str_search(&pattern_test, &text_test);
+  if(str_search_ans == str_search_solution)
+  {
+      ans = true;
+  }
+  else
+  {
+      ans = false;
+  }
+  text_output(5,ans);
+
+
 }
 
 //
