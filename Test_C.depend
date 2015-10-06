@@ -1,11 +1,23 @@
 # depslib dependency file v1.0
-1443799376 source:e:\dropbox\documents\csc 212\codeblocks\test_c\main.c
+1444165852 source:e:\dropbox\documents\csc 212\codeblocks\test_c\main.c
 	"pa-1.h"
 	<stdio.h>
 	<string.h>
 
-1443749917 e:\dropbox\documents\csc 212\codeblocks\test_c\pa-1.h
+1444163812 e:\dropbox\documents\csc 212\codeblocks\test_c\pa-1.h
 
-1443760516 source:e:\dropbox\documents\csc 212\codeblocks\test_c\pa-1.c
+1444165697 source:e:\dropbox\documents\csc 212\codeblocks\test_c\pa-1.c
 	"pa-1.h"
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	<string.h>
+
+1443814167 source:c:\users\mj-mobile\dropbox\documents\csc 212\codeblocks\test_c\pa-1.c
+	"pa-1.h"
+	<stdlib.h>
+	<math.h>
+	<time.h>
+
+1443808150 c:\users\mj-mobile\dropbox\documents\csc 212\codeblocks\test_c\pa-1.h
 

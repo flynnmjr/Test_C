@@ -15,7 +15,7 @@ int f_rotate(int n, int r);
 
 //5
 int f_str_search(char *pattern, char *text);
-/*
+
 //6
 int f_collatz_count(int n);  // c doesn't have natural numbers, using int
 
@@ -26,8 +26,8 @@ float f_array(int n);
 void f_strings(char* s1, char* s2, char* s3);
 
 //9
-void f_sort(int x, int y, int z, char* list);
+void f_sort(int x, int y, int z, int* list);
 
 //10
 char* f_cubes_sum(int n);
-*/
+
